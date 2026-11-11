@@ -4468,19 +4468,19 @@
       },
       "All CPU cores": {
         "state": "untested",
-        "note": "CPU frequency scaling and deep idle in the device tree (#1142)"
+        "note": "CPU frequency scaling and deep idle in the device tree (#1142); on a test kernel without CONFIG_ARM64_CTXR_EXECMEM, which the Aurora kernel config sets, the nine secondary CPUs did not start; not yet tested with it"
       },
       "Internal storage": {
         "state": "untested",
-        "note": "NVMe (#1142)"
+        "note": "NVMe (#1142); root file system on NVMe tested with open u-boot#38 and u-boot#40 and an aura NVMe handoff change"
       },
       "Display output": {
         "state": "untested",
-        "note": "boot framebuffer only, on the HDMI port as iBoot sets it up (#1142)"
+        "note": "boot framebuffer only as merged, on the HDMI port as iBoot sets it up (#1142); full output tested with open #1192 (see HDMI)"
       },
       "HDMI": {
         "state": "none",
-        "note": "hotplug and mode setting are not wired yet; only the boot framebuffer reaches the port (#1142)"
+        "note": "hotplug and mode setting are not wired as merged; only the boot framebuffer reaches the port (#1142); 1920x1080 at 75 Hz, mode switching and replug tested with open #1192"
       },
       "Speaker": {
         "state": "none",
@@ -4492,15 +4492,15 @@
       },
       "USB-C": {
         "state": "untested",
-        "note": "back ports at USB 2 and USB 3, front ports at USB 2 (#1142); the front USB 2 hub (#1187) enumerated a keyboard on a bring-up stack, not as merged"
+        "note": "back ports at USB 2 and USB 3, front ports at USB 2 (#1142); a keyboard on the front-port hub (#1187) and on a back port, and a USB-C dock at USB 3, tested on a test tree with the Type-C port controller driver; the dock needs USB4 and Thunderbolt turned off"
       },
       "Thunderbolt / USB4": {
         "state": "none",
-        "note": "not described yet; the back ports run at USB 2 and USB 3 (#1142)"
+        "note": "not described yet (#1142); USB4 and Thunderbolt docks do not enumerate on a test tree: no USB4 calibration or router support yet"
       },
       "Ethernet": {
         "state": "none",
-        "note": "Gigabit controller described but disabled with its PCIe port (#1142)"
+        "note": "controller disabled with its PCIe port as merged (#1142); the Aquantia controller links at 1 Gbit/s with the port enabled in a test device tree; Macs with a different Ethernet controller not tested"
       },
       "Wi-Fi": {
         "state": "untested",

@@ -502,5 +502,77 @@
         "url": "https://github.com/aurora-silicon/linux/pull/1106#issuecomment-6707088677"
       }
     ]
+  },
+  "j773g": {
+    "boot": [
+      {
+        "date": "2026-11-11",
+        "title": "Native boot from the SSD into Aurora Fedora",
+        "detail": "On one Mac mini M4 (J773g) booted natively through aura, U-Boot and GRUB into Aurora Fedora 44 with KDE Plasma installed: aura Stage 1 1.0.0b8, Stage 2 with aura#113 and J773g display and NVMe handoff changes, U-Boot aurora-wip with u-boot#38 and #40, then Fedora shim and GRUB. The kernel was a test tree with #1191 and #1192, booted with one CPU (see All CPU cores). Not the installer path and not as merged.",
+        "url": "DISCUSSION_COMMENT_URL"
+      }
+    ],
+    "hdmi": [
+      {
+        "date": "2026-11-11",
+        "title": "HDMI mode setting, mode switching and replug",
+        "detail": "On one Mac mini M4 (J773g) booted natively through aura, U-Boot and GRUB into Aurora Fedora 44, on a test tree with #1191 and a local rebase of #1192: HDMI-A-1 connected at 1920x1080 at 75 Hz over 4 lanes at 8.1 Gbit/s, and the SDDM greeter ran on KWin Wayland as DRM master, rendering on the GPU. Switching 1280x720 at 60 Hz, 1920x1080 at 60 Hz, 1280x1024 at 75 Hz and back to 1920x1080 at 75 Hz worked. After unplug and replug the output came back; the first mode set after replug fails with -67 and succeeds about 1 s later. The SDDM greeter does not survive the unplug. One 1080p monitor only; 4K, other monitors and HDMI audio were not tested.",
+        "url": "https://github.com/aurora-silicon/linux/pull/1192"
+      }
+    ],
+    "storage": [
+      {
+        "date": "2026-11-11",
+        "title": "Root file system on the internal NVMe",
+        "detail": "On one Mac mini M4 (J773g) booted natively through aura, U-Boot and GRUB into Aurora Fedora 44: the root file system mounted from the internal NVMe and the system ran from it, with u-boot#38 and #40 (both open) and an aura change that hands the NVMe controller over. Not tested as merged.",
+        "url": "https://github.com/aurora-silicon/u-boot/pull/38#issuecomment-6803660197"
+      }
+    ],
+    "usb": [
+      {
+        "date": "2026-11-11",
+        "title": "Front and back USB-C ports with USB devices",
+        "detail": "On one Mac mini M4 (J773g) booted natively through aura, U-Boot and GRUB into Aurora Fedora 44, on a test tree: the front ports' internal Apple USB 2 hub (#1187, merged) enumerated, and a keyboard worked on it. With the SN201202X Type-C driver built in and a fallback from USB4 to USB 2, a keyboard hot-plugged on a back port enumerated and typed. Not tested as merged.",
+        "url": "https://github.com/techmore/linux/tree/test/j773g-1191-1192hdmi-fix10-typec-20261111"
+      },
+      {
+        "date": "2026-11-11",
+        "title": "USB-C dock at USB 3 on a back port",
+        "detail": "On one Mac mini M4 (J773g) booted natively through aura, U-Boot and GRUB into Aurora Fedora 44, on a test tree with two test-only settings that stop the port controller offering USB4 and Thunderbolt 3: a Dell USB-C dock enumerated at 5 Gbit/s (USB 3) and 480 Mbit/s, with its USB keyboard and mouse and its Gigabit Ethernet adapter (no cable was attached). Without those settings the dock does not enumerate. Not tested as merged.",
+        "url": "https://github.com/techmore/linux/tree/test/j773g-1191-1192hdmi-fix12-typec-20261111"
+      }
+    ],
+    "thunderbolt": [
+      {
+        "date": "2026-11-11",
+        "title": "USB4 and Thunderbolt docks do not enumerate",
+        "detail": "On one Mac mini M4 (J773g) booted natively through aura, U-Boot and GRUB into Aurora Fedora 44, on a test tree: a USB4 dock on a back port stayed in USB4 mode and never appeared on USB 2, and Thunderbolt 3 entry also left a dock unusable. The ports have no USB4 calibration or router support yet.",
+        "url": "https://github.com/techmore/linux/tree/test/j773g-1191-1192hdmi-fix12-typec-20261111"
+      }
+    ],
+    "ethernet": [
+      {
+        "date": "2026-11-11",
+        "title": "Built-in Ethernet with a test device tree",
+        "detail": "On one Mac mini M4 (J773g) booted natively through aura, U-Boot and GRUB into Aurora Fedora 44, with a test device tree that enables the PCIe port and its power domains: this Mac's Aquantia controller probed with the atlantic driver, linked at 1 Gbit/s and carried the SSH session used for setup. Speeds above 1 Gbit/s and Macs fitted with a different Ethernet controller were not tested. The merged device tree keeps the port disabled.",
+        "url": "DISCUSSION_COMMENT_URL"
+      }
+    ],
+    "cpu": [
+      {
+        "date": "2026-11-11",
+        "title": "Secondary CPUs do not start on a test kernel",
+        "detail": "On one Mac mini M4 (J773g) booted natively through aura, U-Boot and GRUB into Aurora Fedora 44, on a test kernel built without CONFIG_ARM64_CTXR_EXECMEM: all nine secondary CPUs reported \"failed to come online\" through the spin table, so the Mac ran with maxcpus=1. The Aurora kernel config sets that option; a boot with it has not been tested on this Mac yet.",
+        "url": "DISCUSSION_COMMENT_URL"
+      }
+    ],
+    "graphics": [
+      {
+        "date": "2026-11-11",
+        "title": "GPU rendering for the login screen",
+        "detail": "On one Mac mini M4 (J773g) booted natively through aura, U-Boot and GRUB into Aurora Fedora 44, on a test tree with #1191: the GPU came up, and the SDDM greeter on KWin Wayland rendered through the Aurora Mesa driver on the GPU's render node.",
+        "url": "https://github.com/aurora-silicon/linux/pull/1191"
+      }
+    ]
   }
 }
