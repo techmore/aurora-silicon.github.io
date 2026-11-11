@@ -574,5 +574,15 @@
         "url": "https://github.com/aurora-silicon/linux/pull/1191"
       }
     ]
+  },
+  "j773s": {
+    "boot": [
+      {
+        "date": "2026-11-11",
+        "title": "Installer completes, boot does not reach Linux",
+        "detail": "Reported by eXsoR65 on a J773s (12-core CPU, 16-core GPU, 48 GB, macOS 26.6.2 firmware). The Aurora Installer (Alpha 19, ALARM KDE, edge build 42520723419) completed every stage, but the installed system hung with no video on both attempts, and macOS recorded an \"AP watchdog expired\" panic at boot stage 227. macOS and the startup picker were unaffected. Nothing that needs a running Linux was tested.",
+        "url": "https://github.com/aurora-silicon/linux/issues/1479#issuecomment-6807144716"
+      }
+    ]
   }
 }

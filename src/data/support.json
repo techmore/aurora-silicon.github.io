@@ -4526,7 +4526,7 @@
     "j773s": {
       "Boot": {
         "state": "works",
-        "note": "confirmed by the Aurora team (2026-11-11)"
+        "note": "confirmed by the Aurora team (2026-11-11); an installer edge-channel ALARM install did not reach Linux on one J773s (#1479)"
       },
       "All CPU cores": {
         "state": "untested",
