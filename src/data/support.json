@@ -4464,23 +4464,23 @@
     "j773g": {
       "Boot": {
         "state": "works",
-        "note": "confirmed by the Aurora team (2026-11-11); earlier contributor boots on GravityLinux trees (#918, #924)"
+        "note": "confirmed by the Aurora team (2026-11-11); on one J773g, native boot to KDE Plasma tested only on a test chain with open pull requests and changes not yet posted; one boot with the in-tree J773g device tree and a rebased kernel series hung with no video; earlier contributor boots on GravityLinux trees (#918, #924)"
       },
       "All CPU cores": {
         "state": "untested",
-        "note": "CPU frequency scaling and deep idle in the device tree (#1142); on a test kernel without CONFIG_ARM64_CTXR_EXECMEM, which the Aurora kernel config sets, the nine secondary CPUs did not start; not yet tested with it"
+        "note": "CPU frequency scaling and deep idle in the device tree (#1142); on a test kernel the nine secondary CPUs did not start without CONFIG_ARM64_CTXR_EXECMEM, and all 10 CPUs came up with it (ctxr_exec_enforce=0); the merged config was not booted here"
       },
       "Internal storage": {
         "state": "untested",
-        "note": "NVMe (#1142); root file system on NVMe tested with open u-boot#38 and u-boot#40 and an aura NVMe handoff change"
+        "note": "NVMe (#1142); root file system on NVMe tested on a test chain with open u-boot#38 and u-boot#40 and an aura NVMe handoff change not yet posted"
       },
       "Display output": {
         "state": "untested",
-        "note": "boot framebuffer only as merged, on the HDMI port as iBoot sets it up (#1142); HDMI output tested on a local #1192 rebase with additional J773g test commits (see HDMI)"
+        "note": "boot framebuffer only as merged, on the HDMI port as iBoot sets it up (#1142); full output tested on a test tree built on open #1192 (see HDMI)"
       },
       "HDMI": {
         "state": "none",
-        "note": "hotplug and mode setting are not wired as merged; only the boot framebuffer reaches the port (#1142); 1920x1080 at 75 Hz, mode switching and replug tested on a local #1192 rebase with additional J773g test commits"
+        "note": "hotplug and mode setting are not wired as merged; only the boot framebuffer reaches the port (#1142); 1920x1080 at 75 Hz, mode switching and replug tested on a test tree built on open #1192 with further changes not yet posted"
       },
       "Speaker": {
         "state": "none",
@@ -4492,15 +4492,15 @@
       },
       "USB-C": {
         "state": "untested",
-        "note": "back ports at USB 2 and USB 3, front ports at USB 2 (#1142); keyboards enumerated on the front-port hub (#1187) and a back port, and a USB-C dock enumerated at USB 3, on a test tree with the Type-C port controller driver; the dock needs USB4 and Thunderbolt turned off"
+        "note": "back ports at USB 2 and USB 3, front ports at USB 2 (#1142); on a test tree with the Type-C port controller driver, a keyboard on the front-port hub (#1187) typed, a keyboard on one back port enumerated, and one USB4/Thunderbolt dock enumerated at USB 3 with USB4 and Thunderbolt turned off"
       },
       "Thunderbolt / USB4": {
         "state": "none",
-        "note": "not described yet (#1142); a dock was unusable in USB4 and Thunderbolt 3 modes on a test tree: no USB4 calibration or router support yet"
+        "note": "not described yet (#1142); one USB4/Thunderbolt dock did not enumerate in USB4 or Thunderbolt 3 mode on a test tree: no USB4 calibration or router support yet"
       },
       "Ethernet": {
         "state": "none",
-        "note": "controller disabled with its PCIe port as merged (#1142); the Aquantia controller links at 1 Gbit/s with the port enabled in a test device tree; Macs with a different Ethernet controller not tested"
+        "note": "controller disabled with its PCIe port as merged (#1142); the Aquantia controller links at 1 Gbit/s and carries traffic on a test tree with the port enabled and a test-only driver change; Macs with a different Ethernet controller not tested"
       },
       "Wi-Fi": {
         "state": "untested",
@@ -4525,8 +4525,8 @@
     },
     "j773s": {
       "Boot": {
-        "state": "works",
-        "note": "confirmed by the Aurora team (2026-11-11); an installer edge-channel ALARM install did not reach Linux on one J773s (#1479)"
+        "state": "none",
+        "note": "an installer edge-channel ALARM install did not reach Linux on one J773s, 2 of 2 attempts (#1479)"
       },
       "All CPU cores": {
         "state": "untested",
