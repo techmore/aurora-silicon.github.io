@@ -516,7 +516,7 @@
       {
         "date": "2026-11-11",
         "title": "HDMI mode setting, mode switching and replug",
-        "detail": "On one Mac mini M4 (J773g) booted natively through aura, U-Boot and GRUB into Aurora Fedora 44, on a test tree with #1191 and a local rebase of #1192: HDMI-A-1 connected at 1920x1080 at 75 Hz over 4 lanes at 8.1 Gbit/s, and the SDDM greeter ran on KWin Wayland as DRM master, rendering on the GPU. Switching 1280x720 at 60 Hz, 1920x1080 at 60 Hz, 1280x1024 at 75 Hz and back to 1920x1080 at 75 Hz worked. After unplug and replug the output came back; the first mode set after replug fails with -67 and succeeds about 1 s later. The SDDM greeter does not survive the unplug. One 1080p monitor only; 4K, other monitors and HDMI audio were not tested.",
+        "detail": "On one Mac mini M4 (J773g) booted natively through aura, U-Boot and GRUB into Aurora Fedora 44, on a test tree with #1191, a local rebase of #1192 and additional J773g test commits: HDMI-A-1 connected at 1920x1080 at 75 Hz over 4 lanes at 8.1 Gbit/s, and the SDDM greeter ran on KWin Wayland as DRM master, rendering on the GPU. Switching 1280x720 at 60 Hz, 1920x1080 at 60 Hz, 1280x1024 at 75 Hz and back to 1920x1080 at 75 Hz worked. After unplug and replug the output came back; the first mode set after replug fails with -67 and succeeds about 1 s later. The SDDM greeter does not survive the unplug. One 1080p monitor only; 4K, other monitors and HDMI audio were not tested.",
         "url": "https://github.com/aurora-silicon/linux/pull/1192"
       }
     ],
@@ -531,22 +531,22 @@
     "usb": [
       {
         "date": "2026-11-11",
-        "title": "Front and back USB-C ports with USB devices",
-        "detail": "On one Mac mini M4 (J773g) booted natively through aura, U-Boot and GRUB into Aurora Fedora 44, on a test tree: the front ports' internal Apple USB 2 hub (#1187, merged) enumerated, and a keyboard worked on it. With the SN201202X Type-C driver built in and a fallback from USB4 to USB 2, a keyboard hot-plugged on a back port enumerated and typed. Not tested as merged.",
+        "title": "Front and back USB-C ports enumerate USB devices",
+        "detail": "On one Mac mini M4 (J773g) booted natively through aura, U-Boot and GRUB into Aurora Fedora 44, on a test tree: the front ports' internal Apple USB 2 hub (#1187, merged) enumerated, and a keyboard enumerated on it; keyboard input was not tested. With the SN201202X Type-C driver built in and a fallback from USB4 to USB 2, a keyboard hot-plugged on a back port enumerated and registered as an HID input device; typing was not tested. Not tested as merged.",
         "url": "https://github.com/techmore/linux/tree/test/j773g-1191-1192hdmi-fix10-typec-20261111"
       },
       {
         "date": "2026-11-11",
-        "title": "USB-C dock at USB 3 on a back port",
-        "detail": "On one Mac mini M4 (J773g) booted natively through aura, U-Boot and GRUB into Aurora Fedora 44, on a test tree with two test-only settings that stop the port controller offering USB4 and Thunderbolt 3: a Dell USB-C dock enumerated at 5 Gbit/s (USB 3) and 480 Mbit/s, with its USB keyboard and mouse and its Gigabit Ethernet adapter (no cable was attached). Without those settings the dock does not enumerate. Not tested as merged.",
+        "title": "USB-C dock enumerates at USB 3 on a back port",
+        "detail": "On one Mac mini M4 (J773g) booted natively through aura, U-Boot and GRUB into Aurora Fedora 44, on a test tree with two test-only settings that stop the port controller offering USB4 and Thunderbolt 3: a Dell USB-C dock enumerated at 5 Gbit/s (USB 3) and 480 Mbit/s, with keyboard and mouse HID devices and a Gigabit Ethernet adapter enumerated; input and Ethernet traffic were not tested, and no cable was attached. Without those settings the dock does not enumerate. Not tested as merged.",
         "url": "https://github.com/techmore/linux/tree/test/j773g-1191-1192hdmi-fix12-typec-20261111"
       }
     ],
     "thunderbolt": [
       {
         "date": "2026-11-11",
-        "title": "USB4 and Thunderbolt docks do not enumerate",
-        "detail": "On one Mac mini M4 (J773g) booted natively through aura, U-Boot and GRUB into Aurora Fedora 44, on a test tree: a USB4 dock on a back port stayed in USB4 mode and never appeared on USB 2, and Thunderbolt 3 entry also left a dock unusable. The ports have no USB4 calibration or router support yet.",
+        "title": "Dock unusable in USB4 and Thunderbolt 3 modes",
+        "detail": "On one Mac mini M4 (J773g) booted natively through aura, U-Boot and GRUB into Aurora Fedora 44, on a test tree: a USB4 dock on a back port stayed in USB4 mode and never appeared on USB 2, and Thunderbolt 3 entry also left the dock unusable. The ports have no USB4 calibration or router support yet.",
         "url": "https://github.com/techmore/linux/tree/test/j773g-1191-1192hdmi-fix12-typec-20261111"
       }
     ],
